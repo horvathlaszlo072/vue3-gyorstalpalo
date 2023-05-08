@@ -26,9 +26,10 @@
 body {
   background-color: #302b27;
   color: #fff;
+  font-family: Quicksand, sans-serif;
+
 }
 #app {
-  font-family: Quicksand, sans-serif;
 }
 
 main {
@@ -40,6 +41,7 @@ input {
   border-radius: 0.5rem;
   background-color: var(--inputBg);
   padding: 0.5rem;
+  color: #FFF;
 }
 
 .df {

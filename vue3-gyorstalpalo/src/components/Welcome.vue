@@ -1,21 +1,30 @@
 <script setup>
-
+import { ref } from "vue";
+const email = ref("");
+const pass = ref("");
+const error = ref('')
+const login = () => {
+  if (!email.value || !pass.value) {
+    error.value = "Töltsd ki mindkét mezőt !";
+  }
+};
 </script>
 
 <template>
-    <h1>taskR</h1>
-    <div class="df">
-      <h2>A leg<strong>cool</strong>abb task kezelő evör</h2>
-      <img
-      alt="Vue logo"
-      src="../assets/logo.png"
-      />
-    </div>
-    <form class="df">
-      <input type="email" placeholder="e-mail">
-      <input type="password" placeholder="jelszó">
-      <button>Login</button>
-    </form>
+  <h1>taskR</h1>
+  <div class="df">
+    <h2>A leg<strong>cool</strong>abb task kezelő evör</h2>
+    <img alt="Vue logo" src="../assets/logo.png" />
+  </div>
+
+  <form class="df" @submit.prevent="login">
+
+    {{ error }}
+
+    <input type="email" placeholder="e-mail" v-model="email" />
+    <input type="password" placeholder="jelszó" v-model="pass" />
+    <button>Login</button>
+  </form>
 </template>
 
 <style scoped>
@@ -33,7 +42,7 @@ img {
   width: 100px;
   height: 100px;
 }
-form{
+form {
   background-color: var(--blue);
   flex-direction: column;
   border-radius: 0.5rem;
@@ -53,9 +62,7 @@ input {
 button {
   background-color: var(--blue);
   color: #fff;
-  border:none;
+  border: none;
   font-size: 1.5rem;
 }
 </style>
-
-34:20
